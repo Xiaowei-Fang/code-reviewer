@@ -1,16 +1,17 @@
-该插件由两个主要部分组成：
+**该插件由两个主要部分组成：**
 1. TypeScript 插件 (src/extension.ts):
--注册一个命令，该命令会作为按钮显示在 Python 文件的编辑器标题栏。
--读取当前活动 Python 文件的内容。
--启动一个 Python 子进程来执行审查脚本。
--通过 stdin/stdout (标准输入/输出) 处理与 Python 脚本的通信。
--在 VSCode 的输出面板中显示结果。
+* 注册一个命令，该命令会作为按钮显示在 Python 文件的编辑器标题栏。
+* 读取当前活动 Python 文件的内容。
+* 启动一个 Python 子进程来执行审查脚本。
+* 通过 stdin/stdout (标准输入/输出) 处理与 Python 脚本的通信。
+* 在 VSCode 的输出面板中显示结果。
+
 2. Python 审查脚本 (review_script.py):
--通过 stdin (标准输入) 接收 Python 代码。
--将代码写入一个临时文件。
--对该临时文件运行 pylint。
--通过 stdout (标准输出) 返回 pylint 报告。
--处理涉及国际字符的各种编码问题。
+* 通过 stdin (标准输入) 接收 Python 代码。
+* 将代码写入一个临时文件。
+* 对该临时文件运行 pylint。
+* 通过 stdout (标准输出) 返回 pylint 报告。
+* 处理涉及国际字符的各种编码问题。
 
 **测试插件**
 1.  按下 F5 键在一个新的 VSCode 窗口中启动插件。
